@@ -43,11 +43,28 @@
 </head>
 
 <body>
+    <style>
+        #main{
+            width: 99%;
+            height: 48px;
+            margin-top: 70%;
+        }
+
+        #chave{
+            width: 99%;
+            height: 48px;
+        }
+    
+    </style>
     <div class="app">
         <h1>PhoneGap</h1>
-        <div id="registration" class="blink">
+        <!---<div id="registration" class="blink">
             <p class="event waiting">Requesting Registration ID</p>
             <p class="event received">Registered</p>
+        </div>-->
+        <div id="main">
+            <span>Chave:</span><br>
+            <input type="text" id="chave">
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
