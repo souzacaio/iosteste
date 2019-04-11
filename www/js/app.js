@@ -1,7 +1,7 @@
 
 // Dom7
 var $$ = Dom7;
-
+localStorage.setItem('DOMINIO','https://www.controlcondo.com.br/controlcondo/v2/')
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element
@@ -19,8 +19,8 @@ var app  = new Framework7({
   },
   // App root methods
   methods: {
-    helloWorld: function () {
-      app.dialog.alert('Hello World!');
+    login_falha: function () {
+      app.dialog.alert('Usuario não encontrado ou sem privilégio.');
     },
   },
   // App routes
@@ -96,3 +96,34 @@ var registrar = {
        });
     }
 }
+
+
+let  initcap = (valor) => {
+
+    var string     = valor.toLowerCase();
+    var string_a   = string.split(' ');
+    var x          = 0;
+    var primeira_m = 0;
+    var formatado  = '';
+    
+    for(x in string_a){
+        
+        primeira_m  = string_a[x].substr(0,1).toUpperCase();
+        formatado  +=  primeira_m+string_a[x].substr(1)+' ';
+    
+    }
+    
+    return formatado;
+}
+
+
+let loader = () => {
+
+      app.dialog.preloader();
+      setTimeout(function () {
+          app.dialog.close();
+          return true
+      }, 4000);
+}
+
+

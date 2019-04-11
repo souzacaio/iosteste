@@ -1,1 +1,41 @@
 /* Your app styles here */
+
+.login-art{
+
+    color: rgb(104, 140, 192);
+    margin-left: 7px;
+
+}
+
+.login-art-topo{
+
+    color: rgb(104, 140, 192);
+    margin-left: 5px;
+
+}
+
+
+.login-art2{
+
+    padding-top: 132px;
+
+}
+
+.logoimg{
+
+    width: 51%;            
+
+}
+
+.placaimg{
+
+    margin: 0 0 0 116px;
+    display:none;
+
+}
+
+.l_multiusu{
+
+    margin-top: 119px;
+
+}

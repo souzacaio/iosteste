@@ -11,6 +11,10 @@ routes = [
     path: '/form/',
     url: './pages/form.html',
   },
+  {
+    path: '/index/',
+    url: './index.html',
+  },
   // Page Loaders & Router
   {
     path: '/page-loader-template7/:user/:userId/:posts/:postId/',
