@@ -4,5 +4,13 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "displayName": "helloworld"
+    "displayName": "helloworld",
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-geolocation": {}
+        }
+    },
+    "dependencies": {
+        "cordova-plugin-geolocation": "git+https://github.com/apache/cordova-plugin-geolocation.git"
+    }
 }
