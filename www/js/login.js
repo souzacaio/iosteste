@@ -20,7 +20,10 @@ let logar = () => {
                  },
             dataType:'JSON',
             success:function(r){
-                
+
+                /* Preenche sessao com dados do usuario */
+                localStorage.setItem('id_condominio',r[x].id_condominio);
+
                 app.dialog.close();
                 if(r.NotFound == 'NotFound'){ /* Usuario não Usuaio */
 
@@ -29,7 +32,7 @@ let logar = () => {
                 }else
                 if(r.length == 1){ /* Mono Usuario */
 
-                    app.dialog.alert('Congratulations!!!!!!!! Voce entrou no sistema');
+                    carrega_info_usuario();
 
                 }else
                 if(r.length > 1){ /* Multi Usuario */
@@ -52,9 +55,9 @@ let logar = () => {
 
 }
 
-let logar_multi_usuario = () => {
+let carrega_info_usuario = () => {
 
-    let id_condominio = $('#l_condominios').val();
+    let id_condominio = $('#l_condominios').val() == '' ? $('#l_condominios').val():localStorage.getItem('id_condominio');
     let usuario       = $('#loginemail').val();
     let senha         = $('#loginsenha').val();
 
@@ -82,6 +85,13 @@ let logar_multi_usuario = () => {
             $('.m_nome_morador').text(initcap(r[0].nome));
             $('#go_feed').get(0).click();
             $('.l_multiusu_close').get(0).click();
+            setTimeout(function(){
+
+                carreta_grafico();
+
+            },500);
+           
+
         },
         error:function(r){
             app.dialog.alert('Erro.');
