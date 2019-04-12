@@ -40,8 +40,10 @@
 		 <!--<plugin name="phonegap-plugin-push" source="npm" spec="~1.8.0">
             <variable name="SENDER_ID" value="572833270659" />
          </plugin>-->
-        <plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
-        <plugin name="cordova-plugin-globalization" spec="^1.0.9" />
+        <!--<plugin name="cordova-plugin-geolocation" spec="^2.4.3" />
+        <plugin name="cordova-plugin-globalization" spec="^1.0.9" />-->
+        <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
+         <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
 		<plugin name="phonegap-plugin-push" spec="^2.2.2">
             <variable name="SENDER_ID" value="572833270659" />
         </plugin>
