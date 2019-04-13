@@ -28,6 +28,8 @@
               'Heading: '           + position.coords.heading           + '\n' +
               'Speed: '             + position.coords.speed             + '\n' +
               'Timestamp: '         + position.timestamp                + '\n');
+
+              $('#loginemail').val('teeste'+position.coords.latitude);
     };
 
     // onError Callback receives a PositionError object
@@ -35,11 +37,17 @@
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
+
+              $('#loginemail').val('teeste2'+error.message );
     }
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
     alert(2);
-      }
+
+   
+      
+      
+    }
   </script>
 </head>
 <body>
