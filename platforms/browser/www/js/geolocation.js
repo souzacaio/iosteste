@@ -19,10 +19,10 @@
                         id_usuario_condominio:localStorage.getItem('id_usuario_condominio'),
                         tipo:'grava_localizacao'
                         },
-                dataType:'JSON',
+
                 success:function(r){
     
-                    alert(ok);
+                    alert('ok');
                 },
                 error:function(r){
                     app.dialog.alert('Erro ao gravar localização.');
