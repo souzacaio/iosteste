@@ -9,45 +9,31 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
   <title>Controlcondoadmin</title>
-
   <link rel="stylesheet" href="framework7/css/framework7.bundle.min.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/app.css">
+
+  <!-- External JavaScript -->
+  <script src="js/login.js"></script>
+  <script src="js/ronda.js"></script>
+  <script src="js/geolocation.js"></script>
   <script>
+
       document.addEventListener("deviceready", onDeviceReady, false);
       function onDeviceReady(){
       
+          /* Trata notificacoes (Funcionando somente no Android) */
          //registrar.setupPush();
-          alert(1);
-         var onSuccess = function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
 
-              $('#loginemail').val('teeste'+position.coords.latitude);
-    };
+         /* Grava geolocation do usuario */
+         setInterval(function(){
 
-    // onError Callback receives a PositionError object
-    //
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
+            navigator.geolocation.getCurrentPosition(GravarGeolocation, onError);
 
-              $('#loginemail').val('teeste2'+error.message );
-    }
-
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    alert(2);
-
-   
-      
+         },15000);
       
     }
+
   </script>
 </head>
 <body>
@@ -177,12 +163,6 @@
 
 <!-- Your custom app scripts -->
 <script src="js/app.js"></script>
-
-<!-- External JavaScript -->
-<script src="js/login.js"></script>
-
-<script src="js/ronda.js"></script>
-
 
 </body>
 </html>

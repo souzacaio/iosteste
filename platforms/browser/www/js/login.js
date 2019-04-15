@@ -21,10 +21,8 @@ let logar = () => {
             dataType:'JSON',
             success:function(r){
 
-                /* Preenche sessao com dados do usuario */
-                localStorage.setItem('id_condominio',r[x].id_condominio);
-
                 app.dialog.close();
+
                 if(r.NotFound == 'NotFound'){ /* Usuario não Usuaio */
 
                     app.dialog.alert('Usuario não encontrado.');
@@ -47,6 +45,10 @@ let logar = () => {
                     $('.abrirmultiuser').click();   
                        
                 }
+
+                /* Preenche sessao com dados do usuario */
+                localStorage.setItem('id_condominio',r[x].id_condominio);
+                
             },
             error:function(r){
                 app.dialog.alert('Erro contate o administrador do sistema.');
