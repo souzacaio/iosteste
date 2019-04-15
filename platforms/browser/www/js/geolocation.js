@@ -22,7 +22,7 @@
 
                 success:function(r){
     
-                    alert('ok');
+                    
                 },
                 error:function(r){
                     app.dialog.alert('Erro ao gravar localização.');
